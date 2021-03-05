@@ -1,0 +1,1218 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		215A4BB625C2BBF000C35AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A4BB525C2BBF000C35AC7 /* AppDelegate.swift */; };
+		215A4BBA25C2BBF000C35AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A4BB925C2BBF000C35AC7 /* ViewController.swift */; };
+		215A4BBD25C2BBF000C35AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BBB25C2BBF000C35AC7 /* Main.storyboard */; };
+		215A4BBF25C2BBF400C35AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BBE25C2BBF400C35AC7 /* Assets.xcassets */; };
+		215A4BC225C2BBF400C35AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BC025C2BBF400C35AC7 /* LaunchScreen.storyboard */; };
+		21CEE4ED25E3875A00401544 /* SWWebViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D025E3875A00401544 /* SWWebViewBridge.swift */; };
+		21CEE4EE25E3875A00401544 /* SWWebViewContainerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D225E3875A00401544 /* SWWebViewContainerDelegate.swift */; };
+		21CEE4EF25E3875A00401544 /* SWWebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D325E3875A00401544 /* SWWebViewCoordinator.swift */; };
+		21CEE4F025E3875A00401544 /* SWURLSchemeTaskOutputPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D425E3875A00401544 /* SWURLSchemeTaskOutputPipe.swift */; };
+		21CEE4F125E3875A00401544 /* MessagePortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D625E3875A00401544 /* MessagePortHandler.swift */; };
+		21CEE4F225E3875A00401544 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D725E3875A00401544 /* EventStream.swift */; };
+		21CEE4F325E3875A00401544 /* ServiceWorkerContainerCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D825E3875A00401544 /* ServiceWorkerContainerCommands.swift */; };
+		21CEE4F425E3875A00401544 /* ServiceWorkerCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D925E3875A00401544 /* ServiceWorkerCommands.swift */; };
+		21CEE4F525E3875A00401544 /* ServiceWorkerRegistrationCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4DA25E3875A00401544 /* ServiceWorkerRegistrationCommands.swift */; };
+		21CEE4F625E3875A00401544 /* MessagePortWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4DC25E3875A00401544 /* MessagePortWrapper.swift */; };
+		21CEE4F725E3875A00401544 /* MessagePortAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4DD25E3875A00401544 /* MessagePortAction.swift */; };
+		21CEE4F825E3875A00401544 /* SWNavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4DF25E3875A00401544 /* SWNavigationAction.swift */; };
+		21CEE4F925E3875A00401544 /* SWURLSchemeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E025E3875A00401544 /* SWURLSchemeTask.swift */; };
+		21CEE4FA25E3875A00401544 /* SWNavigationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E125E3875A00401544 /* SWNavigationResponse.swift */; };
+		21CEE4FB25E3875A00401544 /* SWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E225E3875A00401544 /* SWWebView.swift */; };
+		21CEE4FC25E3875A00401544 /* ServiceWorkerRegistrationToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E425E3875A00401544 /* ServiceWorkerRegistrationToJSON.swift */; };
+		21CEE4FD25E3875A00401544 /* ServiceWorkerContainerToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E525E3875A00401544 /* ServiceWorkerContainerToJSON.swift */; };
+		21CEE4FE25E3875A00401544 /* ServiceWorkerToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E625E3875A00401544 /* ServiceWorkerToJSON.swift */; };
+		21CEE4FF25E3875A00401544 /* WorkerInstallationErrorToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E725E3875A00401544 /* WorkerInstallationErrorToJSON.swift */; };
+		21CEE50025E3875A00401544 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4E825E3875A00401544 /* ToJSON.swift */; };
+		21CEE50225E3875A00401544 /* SWWebViewNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4EC25E3875A00401544 /* SWWebViewNavigationDelegate.swift */; };
+		21CEE50425E3878C00401544 /* js-dist in Resources */ = {isa = PBXBuildFile; fileRef = 21CEE50325E3878C00401544 /* js-dist */; };
+		21CEE56925E387B400401544 /* SharedLogInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE50A25E387B400401544 /* SharedLogInterface.swift */; };
+		21CEE56A25E387B400401544 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE50B25E387B400401544 /* ErrorMessage.swift */; };
+		21CEE56B25E387B400401544 /* PromiseFulfillExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE50C25E387B400401544 /* PromiseFulfillExtensions.swift */; };
+		21CEE56C25E387B400401544 /* WindowClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE50F25E387B400401544 /* WindowClient.swift */; };
+		21CEE56D25E387B400401544 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51025E387B400401544 /* Client.swift */; };
+		21CEE56E25E387B400401544 /* Clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51125E387B400401544 /* Clients.swift */; };
+		21CEE56F25E387B400401544 /* LocationBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51325E387B400401544 /* LocationBase.swift */; };
+		21CEE57025E387B400401544 /* URLSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51425E387B400401544 /* URLSearchParams.swift */; };
+		21CEE57125E387B400401544 /* JSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51525E387B400401544 /* JSURL.swift */; };
+		21CEE57225E387B400401544 /* WorkerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51625E387B400401544 /* WorkerLocation.swift */; };
+		21CEE57325E387B400401544 /* ServiceWorkerGlobalScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51725E387B400401544 /* ServiceWorkerGlobalScope.swift */; };
+		21CEE57425E387B400401544 /* ServiceWorkerGlobalScopeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51825E387B400401544 /* ServiceWorkerGlobalScopeDelegate.swift */; };
+		21CEE57525E387B400401544 /* ServiceWorkerInstallState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51925E387B400401544 /* ServiceWorkerInstallState.swift */; };
+		21CEE57625E387B400401544 /* JSArrayBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51B25E387B400401544 /* JSArrayBuffer.swift */; };
+		21CEE57725E387B400401544 /* JSContextPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51C25E387B400401544 /* JSContextPromise.swift */; };
+		21CEE57825E387B400401544 /* PromiseToJSPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51D25E387B400401544 /* PromiseToJSPromise.swift */; };
+		21CEE57925E387B400401544 /* JSArrayBufferStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51E25E387B400401544 /* JSArrayBufferStream.swift */; };
+		21CEE57A25E387B400401544 /* GlobalVariableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE51F25E387B400401544 /* GlobalVariableProvider.swift */; };
+		21CEE57B25E387B400401544 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52225E387B400401544 /* ClientType.swift */; };
+		21CEE57C25E387B400401544 /* ClientMatchAllOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52325E387B400401544 /* ClientMatchAllOptions.swift */; };
+		21CEE57D25E387B400401544 /* WindowClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52425E387B400401544 /* WindowClientProtocol.swift */; };
+		21CEE57E25E387B400401544 /* ServiceWorkerClientsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52525E387B400401544 /* ServiceWorkerClientsDelegate.swift */; };
+		21CEE57F25E387B400401544 /* ClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52625E387B400401544 /* ClientProtocol.swift */; };
+		21CEE58025E387B400401544 /* WindowClientVisibilityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52725E387B400401544 /* WindowClientVisibilityState.swift */; };
+		21CEE58125E387B400401544 /* ServiceWorkerRegistrationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52925E387B400401544 /* ServiceWorkerRegistrationProtocol.swift */; };
+		21CEE58225E387B400401544 /* CacheMatchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52B25E387B400401544 /* CacheMatchOptions.swift */; };
+		21CEE58325E387B400401544 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52C25E387B400401544 /* CacheStorage.swift */; };
+		21CEE58425E387B400401544 /* CacheStorageProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52D25E387B400401544 /* CacheStorageProviderDelegate.swift */; };
+		21CEE58525E387B400401544 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52E25E387B400401544 /* Cache.swift */; };
+		21CEE58625E387B400401544 /* ServiceWorkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE52F25E387B400401544 /* ServiceWorkerDelegate.swift */; };
+		21CEE58725E387B400401544 /* StreamPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53125E387B400401544 /* StreamPipe.swift */; };
+		21CEE58825E387B400401544 /* InputStreamImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53225E387B400401544 /* InputStreamImplementation.swift */; };
+		21CEE58925E387B400401544 /* PassthroughStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53325E387B400401544 /* PassthroughStream.swift */; };
+		21CEE58A25E387B400401544 /* OutputStreamImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53425E387B400401544 /* OutputStreamImplementation.swift */; };
+		21CEE58B25E387B400401544 /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53725E387B400401544 /* Migration.swift */; };
+		21CEE58C25E387B400401544 /* SQLiteConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53925E387B400401544 /* SQLiteConnection.swift */; };
+		21CEE58D25E387B400401544 /* SQLiteBlobStreamPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53A25E387B400401544 /* SQLiteBlobStreamPointer.swift */; };
+		21CEE58E25E387B400401544 /* SQLiteBlobReadStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53B25E387B400401544 /* SQLiteBlobReadStream.swift */; };
+		21CEE58F25E387B400401544 /* SQLiteResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53C25E387B400401544 /* SQLiteResultSet.swift */; };
+		21CEE59025E387B400401544 /* SQLiteBlobWriteStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53D25E387B400401544 /* SQLiteBlobWriteStream.swift */; };
+		21CEE59125E387B400401544 /* SQLiteDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE53E25E387B400401544 /* SQLiteDataType.swift */; };
+		21CEE59225E387B400401544 /* WebSQLResultRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54025E387B400401544 /* WebSQLResultRows.swift */; };
+		21CEE59325E387B400401544 /* WebSQLDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54125E387B400401544 /* WebSQLDatabase.swift */; };
+		21CEE59425E387B400401544 /* WebSQLTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54225E387B400401544 /* WebSQLTransaction.swift */; };
+		21CEE59525E387B400401544 /* WebSQLResultSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54325E387B400401544 /* WebSQLResultSet.swift */; };
+		21CEE59625E387B400401544 /* TimeoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54525E387B400401544 /* TimeoutManager.swift */; };
+		21CEE59725E387B400401544 /* ConsoleMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54625E387B400401544 /* ConsoleMirror.swift */; };
+		21CEE59825E387B400401544 /* ServiceWorkerExecutionEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54725E387B400401544 /* ServiceWorkerExecutionEnvironment.swift */; };
+		21CEE59925E387B400401544 /* EvaluateScriptCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54825E387B400401544 /* EvaluateScriptCall.swift */; };
+		21CEE59A25E387B400401544 /* FetchCORSRestrictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54A25E387B400401544 /* FetchCORSRestrictions.swift */; };
+		21CEE59B25E387B400401544 /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54B25E387B400401544 /* FetchRequest.swift */; };
+		21CEE59C25E387B500401544 /* FetchResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54D25E387B400401544 /* FetchResponseProtocol.swift */; };
+		21CEE59D25E387B500401544 /* FetchResponseProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54E25E387B400401544 /* FetchResponseProxy.swift */; };
+		21CEE59E25E387B500401544 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE54F25E387B400401544 /* ResponseType.swift */; };
+		21CEE59F25E387B500401544 /* HttpStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55025E387B400401544 /* HttpStatusCodes.swift */; };
+		21CEE5A025E387B500401544 /* FetchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55125E387B400401544 /* FetchResponse.swift */; };
+		21CEE5A125E387B500401544 /* FetchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55225E387B400401544 /* FetchSession.swift */; };
+		21CEE5A225E387B500401544 /* FetchHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55325E387B400401544 /* FetchHeaders.swift */; };
+		21CEE5A325E387B500401544 /* FetchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55425E387B400401544 /* FetchTask.swift */; };
+		21CEE5A425E387B500401544 /* ServiceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55525E387B400401544 /* ServiceWorker.swift */; };
+		21CEE5A525E387B500401544 /* GlobalEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55725E387B400401544 /* GlobalEventLog.swift */; };
+		21CEE5A625E387B500401544 /* ExtendableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55925E387B400401544 /* ExtendableEvent.swift */; };
+		21CEE5A725E387B500401544 /* EventTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55A25E387B400401544 /* EventTarget.swift */; };
+		21CEE5A825E387B500401544 /* SwiftEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55B25E387B400401544 /* SwiftEventListener.swift */; };
+		21CEE5A925E387B500401544 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55C25E387B400401544 /* Event.swift */; };
+		21CEE5AA25E387B500401544 /* JSEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55D25E387B400401544 /* JSEventListener.swift */; };
+		21CEE5AB25E387B500401544 /* EventListenerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55E25E387B400401544 /* EventListenerProtocol.swift */; };
+		21CEE5AC25E387B500401544 /* FetchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE55F25E387B400401544 /* FetchEvent.swift */; };
+		21CEE5AD25E387B500401544 /* ConstructableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56025E387B400401544 /* ConstructableEvent.swift */; };
+		21CEE5AE25E387B500401544 /* ExtendableMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56225E387B400401544 /* ExtendableMessageEvent.swift */; };
+		21CEE5AF25E387B500401544 /* MessagePortTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56325E387B400401544 /* MessagePortTarget.swift */; };
+		21CEE5B025E387B500401544 /* Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56425E387B400401544 /* Transferable.swift */; };
+		21CEE5B125E387B500401544 /* MessageChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56525E387B400401544 /* MessageChannel.swift */; };
+		21CEE5B225E387B500401544 /* MessagePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE56625E387B400401544 /* MessagePort.swift */; };
+		21CEE5B425E387C700401544 /* js-dist-sw in Resources */ = {isa = PBXBuildFile; fileRef = 21CEE5B325E387C600401544 /* js-dist-sw */; };
+		21CEE5CB25E387E600401544 /* ServiceWorkerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5B725E387E600401544 /* ServiceWorkerRegistration.swift */; };
+		21CEE5CC25E387E600401544 /* ServiceWorkerRegistrationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5B825E387E600401544 /* ServiceWorkerRegistrationOptions.swift */; };
+		21CEE5CD25E387E600401544 /* RegistrationWorkerSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5B925E387E600401544 /* RegistrationWorkerSlots.swift */; };
+		21CEE5CE25E387E600401544 /* SQLiteCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5BB25E387E600401544 /* SQLiteCacheStorage.swift */; };
+		21CEE5CF25E387E600401544 /* SQLiteCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5BC25E387E600401544 /* SQLiteCache.swift */; };
+		21CEE5D025E387E600401544 /* ServiceWorkerStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5BE25E387E600401544 /* ServiceWorkerStorageProvider.swift */; };
+		21CEE5D125E387E600401544 /* ServiceWorkerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5BF25E387E600401544 /* ServiceWorkerContainer.swift */; };
+		21CEE5D225E387E600401544 /* CoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C125E387E600401544 /* CoreDatabase.swift */; };
+		21CEE5D325E387E600401544 /* DBConnectionPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C225E387E600401544 /* DBConnectionPool.swift */; };
+		21CEE5D425E387E600401544 /* DatabaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C325E387E600401544 /* DatabaseType.swift */; };
+		21CEE5D525E387E600401544 /* SharedResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C425E387E600401544 /* SharedResources.swift */; };
+		21CEE5D625E387E600401544 /* WorkerRegistrationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C625E387E600401544 /* WorkerRegistrationFactory.swift */; };
+		21CEE5D725E387E600401544 /* WorkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C725E387E600401544 /* WorkerFactory.swift */; };
+		21CEE5D825E387E700401544 /* WorkerInstallationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5C925E387E600401544 /* WorkerInstallationError.swift */; };
+		21CEE5DA25E387FF00401544 /* DatabaseMigrations in Resources */ = {isa = PBXBuildFile; fileRef = 21CEE5D925E387FF00401544 /* DatabaseMigrations */; };
+		21CEE5F225E3B85400401544 /* SWWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE5F125E3B85400401544 /* SWWebViewController.swift */; };
+		21F23B0225CCE39B00FE5014 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F23B0125CCE39B00FE5014 /* WKWebViewController.swift */; };
+		B69D875DEB876CD5573F032A /* Pods_HQPwaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A27DFAA818BE1072ED3A89 /* Pods_HQPwaDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21CEAF4125E37D9300401544 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		215A4BB225C2BBF000C35AC7 /* HQPwaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HQPwaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		215A4BB525C2BBF000C35AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		215A4BB925C2BBF000C35AC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		215A4BBC25C2BBF000C35AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		215A4BBE25C2BBF400C35AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		215A4BC125C2BBF400C35AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		215A4BC325C2BBF400C35AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21CEE4CE25E3875A00401544 /* SWWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWWebView.h; sourceTree = "<group>"; };
+		21CEE4D025E3875A00401544 /* SWWebViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewBridge.swift; sourceTree = "<group>"; };
+		21CEE4D225E3875A00401544 /* SWWebViewContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewContainerDelegate.swift; sourceTree = "<group>"; };
+		21CEE4D325E3875A00401544 /* SWWebViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewCoordinator.swift; sourceTree = "<group>"; };
+		21CEE4D425E3875A00401544 /* SWURLSchemeTaskOutputPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWURLSchemeTaskOutputPipe.swift; sourceTree = "<group>"; };
+		21CEE4D625E3875A00401544 /* MessagePortHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePortHandler.swift; sourceTree = "<group>"; };
+		21CEE4D725E3875A00401544 /* EventStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
+		21CEE4D825E3875A00401544 /* ServiceWorkerContainerCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerContainerCommands.swift; sourceTree = "<group>"; };
+		21CEE4D925E3875A00401544 /* ServiceWorkerCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerCommands.swift; sourceTree = "<group>"; };
+		21CEE4DA25E3875A00401544 /* ServiceWorkerRegistrationCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerRegistrationCommands.swift; sourceTree = "<group>"; };
+		21CEE4DC25E3875A00401544 /* MessagePortWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePortWrapper.swift; sourceTree = "<group>"; };
+		21CEE4DD25E3875A00401544 /* MessagePortAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePortAction.swift; sourceTree = "<group>"; };
+		21CEE4DF25E3875A00401544 /* SWNavigationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWNavigationAction.swift; sourceTree = "<group>"; };
+		21CEE4E025E3875A00401544 /* SWURLSchemeTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWURLSchemeTask.swift; sourceTree = "<group>"; };
+		21CEE4E125E3875A00401544 /* SWNavigationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWNavigationResponse.swift; sourceTree = "<group>"; };
+		21CEE4E225E3875A00401544 /* SWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebView.swift; sourceTree = "<group>"; };
+		21CEE4E425E3875A00401544 /* ServiceWorkerRegistrationToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerRegistrationToJSON.swift; sourceTree = "<group>"; };
+		21CEE4E525E3875A00401544 /* ServiceWorkerContainerToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerContainerToJSON.swift; sourceTree = "<group>"; };
+		21CEE4E625E3875A00401544 /* ServiceWorkerToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerToJSON.swift; sourceTree = "<group>"; };
+		21CEE4E725E3875A00401544 /* WorkerInstallationErrorToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerInstallationErrorToJSON.swift; sourceTree = "<group>"; };
+		21CEE4E825E3875A00401544 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
+		21CEE4EC25E3875A00401544 /* SWWebViewNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewNavigationDelegate.swift; sourceTree = "<group>"; };
+		21CEE50325E3878C00401544 /* js-dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "js-dist"; sourceTree = "<group>"; };
+		21CEE50A25E387B400401544 /* SharedLogInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedLogInterface.swift; sourceTree = "<group>"; };
+		21CEE50B25E387B400401544 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		21CEE50C25E387B400401544 /* PromiseFulfillExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseFulfillExtensions.swift; sourceTree = "<group>"; };
+		21CEE50F25E387B400401544 /* WindowClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowClient.swift; sourceTree = "<group>"; };
+		21CEE51025E387B400401544 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		21CEE51125E387B400401544 /* Clients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clients.swift; sourceTree = "<group>"; };
+		21CEE51325E387B400401544 /* LocationBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBase.swift; sourceTree = "<group>"; };
+		21CEE51425E387B400401544 /* URLSearchParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSearchParams.swift; sourceTree = "<group>"; };
+		21CEE51525E387B400401544 /* JSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSURL.swift; sourceTree = "<group>"; };
+		21CEE51625E387B400401544 /* WorkerLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerLocation.swift; sourceTree = "<group>"; };
+		21CEE51725E387B400401544 /* ServiceWorkerGlobalScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerGlobalScope.swift; sourceTree = "<group>"; };
+		21CEE51825E387B400401544 /* ServiceWorkerGlobalScopeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerGlobalScopeDelegate.swift; sourceTree = "<group>"; };
+		21CEE51925E387B400401544 /* ServiceWorkerInstallState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerInstallState.swift; sourceTree = "<group>"; };
+		21CEE51B25E387B400401544 /* JSArrayBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSArrayBuffer.swift; sourceTree = "<group>"; };
+		21CEE51C25E387B400401544 /* JSContextPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSContextPromise.swift; sourceTree = "<group>"; };
+		21CEE51D25E387B400401544 /* PromiseToJSPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseToJSPromise.swift; sourceTree = "<group>"; };
+		21CEE51E25E387B400401544 /* JSArrayBufferStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSArrayBufferStream.swift; sourceTree = "<group>"; };
+		21CEE51F25E387B400401544 /* GlobalVariableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariableProvider.swift; sourceTree = "<group>"; };
+		21CEE52225E387B400401544 /* ClientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
+		21CEE52325E387B400401544 /* ClientMatchAllOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientMatchAllOptions.swift; sourceTree = "<group>"; };
+		21CEE52425E387B400401544 /* WindowClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowClientProtocol.swift; sourceTree = "<group>"; };
+		21CEE52525E387B400401544 /* ServiceWorkerClientsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerClientsDelegate.swift; sourceTree = "<group>"; };
+		21CEE52625E387B400401544 /* ClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientProtocol.swift; sourceTree = "<group>"; };
+		21CEE52725E387B400401544 /* WindowClientVisibilityState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowClientVisibilityState.swift; sourceTree = "<group>"; };
+		21CEE52925E387B400401544 /* ServiceWorkerRegistrationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerRegistrationProtocol.swift; sourceTree = "<group>"; };
+		21CEE52B25E387B400401544 /* CacheMatchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheMatchOptions.swift; sourceTree = "<group>"; };
+		21CEE52C25E387B400401544 /* CacheStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		21CEE52D25E387B400401544 /* CacheStorageProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheStorageProviderDelegate.swift; sourceTree = "<group>"; };
+		21CEE52E25E387B400401544 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		21CEE52F25E387B400401544 /* ServiceWorkerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerDelegate.swift; sourceTree = "<group>"; };
+		21CEE53125E387B400401544 /* StreamPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPipe.swift; sourceTree = "<group>"; };
+		21CEE53225E387B400401544 /* InputStreamImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStreamImplementation.swift; sourceTree = "<group>"; };
+		21CEE53325E387B400401544 /* PassthroughStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassthroughStream.swift; sourceTree = "<group>"; };
+		21CEE53425E387B400401544 /* OutputStreamImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputStreamImplementation.swift; sourceTree = "<group>"; };
+		21CEE53525E387B400401544 /* ServiceWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWorker.h; sourceTree = "<group>"; };
+		21CEE53725E387B400401544 /* Migration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Migration.swift; sourceTree = "<group>"; };
+		21CEE53925E387B400401544 /* SQLiteConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteConnection.swift; sourceTree = "<group>"; };
+		21CEE53A25E387B400401544 /* SQLiteBlobStreamPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBlobStreamPointer.swift; sourceTree = "<group>"; };
+		21CEE53B25E387B400401544 /* SQLiteBlobReadStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBlobReadStream.swift; sourceTree = "<group>"; };
+		21CEE53C25E387B400401544 /* SQLiteResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteResultSet.swift; sourceTree = "<group>"; };
+		21CEE53D25E387B400401544 /* SQLiteBlobWriteStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteBlobWriteStream.swift; sourceTree = "<group>"; };
+		21CEE53E25E387B400401544 /* SQLiteDataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDataType.swift; sourceTree = "<group>"; };
+		21CEE54025E387B400401544 /* WebSQLResultRows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSQLResultRows.swift; sourceTree = "<group>"; };
+		21CEE54125E387B400401544 /* WebSQLDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSQLDatabase.swift; sourceTree = "<group>"; };
+		21CEE54225E387B400401544 /* WebSQLTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSQLTransaction.swift; sourceTree = "<group>"; };
+		21CEE54325E387B400401544 /* WebSQLResultSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSQLResultSet.swift; sourceTree = "<group>"; };
+		21CEE54525E387B400401544 /* TimeoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeoutManager.swift; sourceTree = "<group>"; };
+		21CEE54625E387B400401544 /* ConsoleMirror.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMirror.swift; sourceTree = "<group>"; };
+		21CEE54725E387B400401544 /* ServiceWorkerExecutionEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerExecutionEnvironment.swift; sourceTree = "<group>"; };
+		21CEE54825E387B400401544 /* EvaluateScriptCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluateScriptCall.swift; sourceTree = "<group>"; };
+		21CEE54A25E387B400401544 /* FetchCORSRestrictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchCORSRestrictions.swift; sourceTree = "<group>"; };
+		21CEE54B25E387B400401544 /* FetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequest.swift; sourceTree = "<group>"; };
+		21CEE54D25E387B400401544 /* FetchResponseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResponseProtocol.swift; sourceTree = "<group>"; };
+		21CEE54E25E387B400401544 /* FetchResponseProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResponseProxy.swift; sourceTree = "<group>"; };
+		21CEE54F25E387B400401544 /* ResponseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		21CEE55025E387B400401544 /* HttpStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCodes.swift; sourceTree = "<group>"; };
+		21CEE55125E387B400401544 /* FetchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResponse.swift; sourceTree = "<group>"; };
+		21CEE55225E387B400401544 /* FetchSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchSession.swift; sourceTree = "<group>"; };
+		21CEE55325E387B400401544 /* FetchHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchHeaders.swift; sourceTree = "<group>"; };
+		21CEE55425E387B400401544 /* FetchTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTask.swift; sourceTree = "<group>"; };
+		21CEE55525E387B400401544 /* ServiceWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorker.swift; sourceTree = "<group>"; };
+		21CEE55725E387B400401544 /* GlobalEventLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalEventLog.swift; sourceTree = "<group>"; };
+		21CEE55925E387B400401544 /* ExtendableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableEvent.swift; sourceTree = "<group>"; };
+		21CEE55A25E387B400401544 /* EventTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTarget.swift; sourceTree = "<group>"; };
+		21CEE55B25E387B400401544 /* SwiftEventListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftEventListener.swift; sourceTree = "<group>"; };
+		21CEE55C25E387B400401544 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		21CEE55D25E387B400401544 /* JSEventListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSEventListener.swift; sourceTree = "<group>"; };
+		21CEE55E25E387B400401544 /* EventListenerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListenerProtocol.swift; sourceTree = "<group>"; };
+		21CEE55F25E387B400401544 /* FetchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchEvent.swift; sourceTree = "<group>"; };
+		21CEE56025E387B400401544 /* ConstructableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstructableEvent.swift; sourceTree = "<group>"; };
+		21CEE56225E387B400401544 /* ExtendableMessageEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendableMessageEvent.swift; sourceTree = "<group>"; };
+		21CEE56325E387B400401544 /* MessagePortTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePortTarget.swift; sourceTree = "<group>"; };
+		21CEE56425E387B400401544 /* Transferable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transferable.swift; sourceTree = "<group>"; };
+		21CEE56525E387B400401544 /* MessageChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageChannel.swift; sourceTree = "<group>"; };
+		21CEE56625E387B400401544 /* MessagePort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePort.swift; sourceTree = "<group>"; };
+		21CEE5B325E387C600401544 /* js-dist-sw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "js-dist-sw"; sourceTree = "<group>"; };
+		21CEE5B725E387E600401544 /* ServiceWorkerRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerRegistration.swift; sourceTree = "<group>"; };
+		21CEE5B825E387E600401544 /* ServiceWorkerRegistrationOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerRegistrationOptions.swift; sourceTree = "<group>"; };
+		21CEE5B925E387E600401544 /* RegistrationWorkerSlots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationWorkerSlots.swift; sourceTree = "<group>"; };
+		21CEE5BB25E387E600401544 /* SQLiteCacheStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCacheStorage.swift; sourceTree = "<group>"; };
+		21CEE5BC25E387E600401544 /* SQLiteCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteCache.swift; sourceTree = "<group>"; };
+		21CEE5BE25E387E600401544 /* ServiceWorkerStorageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerStorageProvider.swift; sourceTree = "<group>"; };
+		21CEE5BF25E387E600401544 /* ServiceWorkerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceWorkerContainer.swift; sourceTree = "<group>"; };
+		21CEE5C125E387E600401544 /* CoreDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDatabase.swift; sourceTree = "<group>"; };
+		21CEE5C225E387E600401544 /* DBConnectionPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBConnectionPool.swift; sourceTree = "<group>"; };
+		21CEE5C325E387E600401544 /* DatabaseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseType.swift; sourceTree = "<group>"; };
+		21CEE5C425E387E600401544 /* SharedResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedResources.swift; sourceTree = "<group>"; };
+		21CEE5C625E387E600401544 /* WorkerRegistrationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerRegistrationFactory.swift; sourceTree = "<group>"; };
+		21CEE5C725E387E600401544 /* WorkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerFactory.swift; sourceTree = "<group>"; };
+		21CEE5C925E387E600401544 /* WorkerInstallationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkerInstallationError.swift; sourceTree = "<group>"; };
+		21CEE5CA25E387E600401544 /* ServiceWorkerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWorkerContainer.h; sourceTree = "<group>"; };
+		21CEE5D925E387FF00401544 /* DatabaseMigrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DatabaseMigrations; sourceTree = "<group>"; };
+		21CEE5F125E3B85400401544 /* SWWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWWebViewController.swift; sourceTree = "<group>"; };
+		21F23B0125CCE39B00FE5014 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		626EF0CF6F9D8DB54264475B /* Pods-HQPwaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQPwaDemo.debug.xcconfig"; path = "Target Support Files/Pods-HQPwaDemo/Pods-HQPwaDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C1C8B0CC7A866466A19F627B /* Pods-HQPwaDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQPwaDemo.release.xcconfig"; path = "Target Support Files/Pods-HQPwaDemo/Pods-HQPwaDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D0A27DFAA818BE1072ED3A89 /* Pods_HQPwaDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQPwaDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		215A4BAF25C2BBF000C35AC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69D875DEB876CD5573F032A /* Pods_HQPwaDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		215A4BA925C2BBF000C35AC7 = {
+			isa = PBXGroup;
+			children = (
+				215A4BB425C2BBF000C35AC7 /* HQPwaDemo */,
+				215A4BB325C2BBF000C35AC7 /* Products */,
+				C273AEA4F19416220D3739DB /* Pods */,
+				3FBE06B9CBC06E5F08882C39 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		215A4BB325C2BBF000C35AC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				215A4BB225C2BBF000C35AC7 /* HQPwaDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		215A4BB425C2BBF000C35AC7 /* HQPwaDemo */ = {
+			isa = PBXGroup;
+			children = (
+				215A4BB525C2BBF000C35AC7 /* AppDelegate.swift */,
+				215A4BB925C2BBF000C35AC7 /* ViewController.swift */,
+				215A4BBB25C2BBF000C35AC7 /* Main.storyboard */,
+				215A4BBE25C2BBF400C35AC7 /* Assets.xcassets */,
+				215A4BC025C2BBF400C35AC7 /* LaunchScreen.storyboard */,
+				215A4BC325C2BBF400C35AC7 /* Info.plist */,
+				21F23B0125CCE39B00FE5014 /* WKWebViewController.swift */,
+				21CEE5F125E3B85400401544 /* SWWebViewController.swift */,
+				21CEE4CC25E3874000401544 /* Thirds */,
+			);
+			path = HQPwaDemo;
+			sourceTree = "<group>";
+		};
+		21CEE4CC25E3874000401544 /* Thirds */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5B525E387E600401544 /* ServiceWorkerContainer */,
+				21CEE50525E387B400401544 /* ServiceWorker */,
+				21CEE4CD25E3875A00401544 /* SWWebView */,
+			);
+			path = Thirds;
+			sourceTree = "<group>";
+		};
+		21CEE4CD25E3875A00401544 /* SWWebView */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4CE25E3875A00401544 /* SWWebView.h */,
+				21CEE4E225E3875A00401544 /* SWWebView.swift */,
+				21CEE4EC25E3875A00401544 /* SWWebViewNavigationDelegate.swift */,
+				21CEE50325E3878C00401544 /* js-dist */,
+				21CEE4CF25E3875A00401544 /* Bridge */,
+				21CEE4D125E3875A00401544 /* Interop */,
+				21CEE4D525E3875A00401544 /* CommandBridge */,
+				21CEE4DE25E3875A00401544 /* SubstituteWKComponents */,
+				21CEE4E325E3875A00401544 /* ToJSONExtensions */,
+			);
+			path = SWWebView;
+			sourceTree = "<group>";
+		};
+		21CEE4CF25E3875A00401544 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4D025E3875A00401544 /* SWWebViewBridge.swift */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		21CEE4D125E3875A00401544 /* Interop */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4D225E3875A00401544 /* SWWebViewContainerDelegate.swift */,
+				21CEE4D325E3875A00401544 /* SWWebViewCoordinator.swift */,
+				21CEE4D425E3875A00401544 /* SWURLSchemeTaskOutputPipe.swift */,
+			);
+			path = Interop;
+			sourceTree = "<group>";
+		};
+		21CEE4D525E3875A00401544 /* CommandBridge */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4D625E3875A00401544 /* MessagePortHandler.swift */,
+				21CEE4D725E3875A00401544 /* EventStream.swift */,
+				21CEE4D825E3875A00401544 /* ServiceWorkerContainerCommands.swift */,
+				21CEE4D925E3875A00401544 /* ServiceWorkerCommands.swift */,
+				21CEE4DA25E3875A00401544 /* ServiceWorkerRegistrationCommands.swift */,
+				21CEE4DB25E3875A00401544 /* Messaging */,
+			);
+			path = CommandBridge;
+			sourceTree = "<group>";
+		};
+		21CEE4DB25E3875A00401544 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4DC25E3875A00401544 /* MessagePortWrapper.swift */,
+				21CEE4DD25E3875A00401544 /* MessagePortAction.swift */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		21CEE4DE25E3875A00401544 /* SubstituteWKComponents */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4DF25E3875A00401544 /* SWNavigationAction.swift */,
+				21CEE4E025E3875A00401544 /* SWURLSchemeTask.swift */,
+				21CEE4E125E3875A00401544 /* SWNavigationResponse.swift */,
+			);
+			path = SubstituteWKComponents;
+			sourceTree = "<group>";
+		};
+		21CEE4E325E3875A00401544 /* ToJSONExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE4E425E3875A00401544 /* ServiceWorkerRegistrationToJSON.swift */,
+				21CEE4E525E3875A00401544 /* ServiceWorkerContainerToJSON.swift */,
+				21CEE4E625E3875A00401544 /* ServiceWorkerToJSON.swift */,
+				21CEE4E725E3875A00401544 /* WorkerInstallationErrorToJSON.swift */,
+				21CEE4E825E3875A00401544 /* ToJSON.swift */,
+			);
+			path = ToJSONExtensions;
+			sourceTree = "<group>";
+		};
+		21CEE50525E387B400401544 /* ServiceWorker */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE53525E387B400401544 /* ServiceWorker.h */,
+				21CEE55525E387B400401544 /* ServiceWorker.swift */,
+				21CEE51925E387B400401544 /* ServiceWorkerInstallState.swift */,
+				21CEE5B325E387C600401544 /* js-dist-sw */,
+				21CEE50925E387B400401544 /* Util */,
+				21CEE50D25E387B400401544 /* GlobalScope */,
+				21CEE51A25E387B400401544 /* JS */,
+				21CEE52025E387B400401544 /* Interop */,
+				21CEE53025E387B400401544 /* Stream */,
+				21CEE53625E387B400401544 /* DatabaseMigration */,
+				21CEE53825E387B400401544 /* SQLite */,
+				21CEE53F25E387B400401544 /* WebSQL */,
+				21CEE54425E387B400401544 /* ExecutionEnvironment */,
+				21CEE54925E387B400401544 /* Fetch */,
+				21CEE55625E387B400401544 /* GlobalEventLog */,
+				21CEE55825E387B400401544 /* Events */,
+				21CEE56125E387B400401544 /* Messaging */,
+			);
+			path = ServiceWorker;
+			sourceTree = "<group>";
+		};
+		21CEE50925E387B400401544 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE50A25E387B400401544 /* SharedLogInterface.swift */,
+				21CEE50B25E387B400401544 /* ErrorMessage.swift */,
+				21CEE50C25E387B400401544 /* PromiseFulfillExtensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		21CEE50D25E387B400401544 /* GlobalScope */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE50E25E387B400401544 /* Clients */,
+				21CEE51225E387B400401544 /* Location */,
+				21CEE51725E387B400401544 /* ServiceWorkerGlobalScope.swift */,
+				21CEE51825E387B400401544 /* ServiceWorkerGlobalScopeDelegate.swift */,
+			);
+			path = GlobalScope;
+			sourceTree = "<group>";
+		};
+		21CEE50E25E387B400401544 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE50F25E387B400401544 /* WindowClient.swift */,
+				21CEE51025E387B400401544 /* Client.swift */,
+				21CEE51125E387B400401544 /* Clients.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		21CEE51225E387B400401544 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE51325E387B400401544 /* LocationBase.swift */,
+				21CEE51425E387B400401544 /* URLSearchParams.swift */,
+				21CEE51525E387B400401544 /* JSURL.swift */,
+				21CEE51625E387B400401544 /* WorkerLocation.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		21CEE51A25E387B400401544 /* JS */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE51B25E387B400401544 /* JSArrayBuffer.swift */,
+				21CEE51C25E387B400401544 /* JSContextPromise.swift */,
+				21CEE51D25E387B400401544 /* PromiseToJSPromise.swift */,
+				21CEE51E25E387B400401544 /* JSArrayBufferStream.swift */,
+				21CEE51F25E387B400401544 /* GlobalVariableProvider.swift */,
+			);
+			path = JS;
+			sourceTree = "<group>";
+		};
+		21CEE52025E387B400401544 /* Interop */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE52125E387B400401544 /* Clients */,
+				21CEE52825E387B400401544 /* Registration */,
+				21CEE52A25E387B400401544 /* Cache */,
+				21CEE52F25E387B400401544 /* ServiceWorkerDelegate.swift */,
+			);
+			path = Interop;
+			sourceTree = "<group>";
+		};
+		21CEE52125E387B400401544 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE52225E387B400401544 /* ClientType.swift */,
+				21CEE52325E387B400401544 /* ClientMatchAllOptions.swift */,
+				21CEE52425E387B400401544 /* WindowClientProtocol.swift */,
+				21CEE52525E387B400401544 /* ServiceWorkerClientsDelegate.swift */,
+				21CEE52625E387B400401544 /* ClientProtocol.swift */,
+				21CEE52725E387B400401544 /* WindowClientVisibilityState.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		21CEE52825E387B400401544 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE52925E387B400401544 /* ServiceWorkerRegistrationProtocol.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		21CEE52A25E387B400401544 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE52B25E387B400401544 /* CacheMatchOptions.swift */,
+				21CEE52C25E387B400401544 /* CacheStorage.swift */,
+				21CEE52D25E387B400401544 /* CacheStorageProviderDelegate.swift */,
+				21CEE52E25E387B400401544 /* Cache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		21CEE53025E387B400401544 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE53125E387B400401544 /* StreamPipe.swift */,
+				21CEE53225E387B400401544 /* InputStreamImplementation.swift */,
+				21CEE53325E387B400401544 /* PassthroughStream.swift */,
+				21CEE53425E387B400401544 /* OutputStreamImplementation.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		21CEE53625E387B400401544 /* DatabaseMigration */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE53725E387B400401544 /* Migration.swift */,
+			);
+			path = DatabaseMigration;
+			sourceTree = "<group>";
+		};
+		21CEE53825E387B400401544 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE53925E387B400401544 /* SQLiteConnection.swift */,
+				21CEE53A25E387B400401544 /* SQLiteBlobStreamPointer.swift */,
+				21CEE53B25E387B400401544 /* SQLiteBlobReadStream.swift */,
+				21CEE53C25E387B400401544 /* SQLiteResultSet.swift */,
+				21CEE53D25E387B400401544 /* SQLiteBlobWriteStream.swift */,
+				21CEE53E25E387B400401544 /* SQLiteDataType.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		21CEE53F25E387B400401544 /* WebSQL */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE54025E387B400401544 /* WebSQLResultRows.swift */,
+				21CEE54125E387B400401544 /* WebSQLDatabase.swift */,
+				21CEE54225E387B400401544 /* WebSQLTransaction.swift */,
+				21CEE54325E387B400401544 /* WebSQLResultSet.swift */,
+			);
+			path = WebSQL;
+			sourceTree = "<group>";
+		};
+		21CEE54425E387B400401544 /* ExecutionEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE54525E387B400401544 /* TimeoutManager.swift */,
+				21CEE54625E387B400401544 /* ConsoleMirror.swift */,
+				21CEE54725E387B400401544 /* ServiceWorkerExecutionEnvironment.swift */,
+				21CEE54825E387B400401544 /* EvaluateScriptCall.swift */,
+			);
+			path = ExecutionEnvironment;
+			sourceTree = "<group>";
+		};
+		21CEE54925E387B400401544 /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE54A25E387B400401544 /* FetchCORSRestrictions.swift */,
+				21CEE54B25E387B400401544 /* FetchRequest.swift */,
+				21CEE54C25E387B400401544 /* Response */,
+				21CEE55025E387B400401544 /* HttpStatusCodes.swift */,
+				21CEE55125E387B400401544 /* FetchResponse.swift */,
+				21CEE55225E387B400401544 /* FetchSession.swift */,
+				21CEE55325E387B400401544 /* FetchHeaders.swift */,
+				21CEE55425E387B400401544 /* FetchTask.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
+		};
+		21CEE54C25E387B400401544 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE54D25E387B400401544 /* FetchResponseProtocol.swift */,
+				21CEE54E25E387B400401544 /* FetchResponseProxy.swift */,
+				21CEE54F25E387B400401544 /* ResponseType.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		21CEE55625E387B400401544 /* GlobalEventLog */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE55725E387B400401544 /* GlobalEventLog.swift */,
+			);
+			path = GlobalEventLog;
+			sourceTree = "<group>";
+		};
+		21CEE55825E387B400401544 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE55925E387B400401544 /* ExtendableEvent.swift */,
+				21CEE55A25E387B400401544 /* EventTarget.swift */,
+				21CEE55B25E387B400401544 /* SwiftEventListener.swift */,
+				21CEE55C25E387B400401544 /* Event.swift */,
+				21CEE55D25E387B400401544 /* JSEventListener.swift */,
+				21CEE55E25E387B400401544 /* EventListenerProtocol.swift */,
+				21CEE55F25E387B400401544 /* FetchEvent.swift */,
+				21CEE56025E387B400401544 /* ConstructableEvent.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		21CEE56125E387B400401544 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE56225E387B400401544 /* ExtendableMessageEvent.swift */,
+				21CEE56325E387B400401544 /* MessagePortTarget.swift */,
+				21CEE56425E387B400401544 /* Transferable.swift */,
+				21CEE56525E387B400401544 /* MessageChannel.swift */,
+				21CEE56625E387B400401544 /* MessagePort.swift */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		21CEE5B525E387E600401544 /* ServiceWorkerContainer */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5CA25E387E600401544 /* ServiceWorkerContainer.h */,
+				21CEE5BF25E387E600401544 /* ServiceWorkerContainer.swift */,
+				21CEE5D925E387FF00401544 /* DatabaseMigrations */,
+				21CEE5B625E387E600401544 /* Registration */,
+				21CEE5BA25E387E600401544 /* Cache */,
+				21CEE5BD25E387E600401544 /* Interop */,
+				21CEE5C025E387E600401544 /* Storage */,
+				21CEE5C525E387E600401544 /* Factories */,
+				21CEE5C825E387E600401544 /* Events */,
+			);
+			path = ServiceWorkerContainer;
+			sourceTree = "<group>";
+		};
+		21CEE5B625E387E600401544 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5B725E387E600401544 /* ServiceWorkerRegistration.swift */,
+				21CEE5B825E387E600401544 /* ServiceWorkerRegistrationOptions.swift */,
+				21CEE5B925E387E600401544 /* RegistrationWorkerSlots.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		21CEE5BA25E387E600401544 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5BB25E387E600401544 /* SQLiteCacheStorage.swift */,
+				21CEE5BC25E387E600401544 /* SQLiteCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		21CEE5BD25E387E600401544 /* Interop */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5BE25E387E600401544 /* ServiceWorkerStorageProvider.swift */,
+			);
+			path = Interop;
+			sourceTree = "<group>";
+		};
+		21CEE5C025E387E600401544 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5C125E387E600401544 /* CoreDatabase.swift */,
+				21CEE5C225E387E600401544 /* DBConnectionPool.swift */,
+				21CEE5C325E387E600401544 /* DatabaseType.swift */,
+				21CEE5C425E387E600401544 /* SharedResources.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		21CEE5C525E387E600401544 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5C625E387E600401544 /* WorkerRegistrationFactory.swift */,
+				21CEE5C725E387E600401544 /* WorkerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		21CEE5C825E387E600401544 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				21CEE5C925E387E600401544 /* WorkerInstallationError.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		3FBE06B9CBC06E5F08882C39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0A27DFAA818BE1072ED3A89 /* Pods_HQPwaDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C273AEA4F19416220D3739DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				626EF0CF6F9D8DB54264475B /* Pods-HQPwaDemo.debug.xcconfig */,
+				C1C8B0CC7A866466A19F627B /* Pods-HQPwaDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		215A4BB125C2BBF000C35AC7 /* HQPwaDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 215A4BC625C2BBF400C35AC7 /* Build configuration list for PBXNativeTarget "HQPwaDemo" */;
+			buildPhases = (
+				D60F40AE3BB8F313B38F2399 /* [CP] Check Pods Manifest.lock */,
+				215A4BAE25C2BBF000C35AC7 /* Sources */,
+				215A4BAF25C2BBF000C35AC7 /* Frameworks */,
+				215A4BB025C2BBF000C35AC7 /* Resources */,
+				0479C3DC485AB79C0EFA5712 /* [CP] Embed Pods Frameworks */,
+				21CEAF4125E37D9300401544 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HQPwaDemo;
+			productName = HQPwaDemo;
+			productReference = 215A4BB225C2BBF000C35AC7 /* HQPwaDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		215A4BAA25C2BBF000C35AC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					215A4BB125C2BBF000C35AC7 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 215A4BAD25C2BBF000C35AC7 /* Build configuration list for PBXProject "HQPwaDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 215A4BA925C2BBF000C35AC7;
+			productRefGroup = 215A4BB325C2BBF000C35AC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				215A4BB125C2BBF000C35AC7 /* HQPwaDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		215A4BB025C2BBF000C35AC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CEE5B425E387C700401544 /* js-dist-sw in Resources */,
+				215A4BC225C2BBF400C35AC7 /* LaunchScreen.storyboard in Resources */,
+				21CEE50425E3878C00401544 /* js-dist in Resources */,
+				215A4BBF25C2BBF400C35AC7 /* Assets.xcassets in Resources */,
+				21CEE5DA25E387FF00401544 /* DatabaseMigrations in Resources */,
+				215A4BBD25C2BBF000C35AC7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0479C3DC485AB79C0EFA5712 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HQPwaDemo/Pods-HQPwaDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HQPwaDemo/Pods-HQPwaDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HQPwaDemo/Pods-HQPwaDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D60F40AE3BB8F313B38F2399 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HQPwaDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		215A4BAE25C2BBF000C35AC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CEE4FC25E3875A00401544 /* ServiceWorkerRegistrationToJSON.swift in Sources */,
+				21CEE5CF25E387E600401544 /* SQLiteCache.swift in Sources */,
+				21CEE57825E387B400401544 /* PromiseToJSPromise.swift in Sources */,
+				21CEE56925E387B400401544 /* SharedLogInterface.swift in Sources */,
+				21CEE5A525E387B500401544 /* GlobalEventLog.swift in Sources */,
+				21CEE57F25E387B400401544 /* ClientProtocol.swift in Sources */,
+				21CEE57D25E387B400401544 /* WindowClientProtocol.swift in Sources */,
+				21CEE5B025E387B500401544 /* Transferable.swift in Sources */,
+				21CEE57525E387B400401544 /* ServiceWorkerInstallState.swift in Sources */,
+				21CEE57325E387B400401544 /* ServiceWorkerGlobalScope.swift in Sources */,
+				21CEE5A925E387B500401544 /* Event.swift in Sources */,
+				21CEE58725E387B400401544 /* StreamPipe.swift in Sources */,
+				21CEE59E25E387B500401544 /* ResponseType.swift in Sources */,
+				21CEE58225E387B400401544 /* CacheMatchOptions.swift in Sources */,
+				21CEE50025E3875A00401544 /* ToJSON.swift in Sources */,
+				21CEE5B225E387B500401544 /* MessagePort.swift in Sources */,
+				21CEE5AF25E387B500401544 /* MessagePortTarget.swift in Sources */,
+				21CEE58D25E387B400401544 /* SQLiteBlobStreamPointer.swift in Sources */,
+				21CEE56B25E387B400401544 /* PromiseFulfillExtensions.swift in Sources */,
+				21CEE57625E387B400401544 /* JSArrayBuffer.swift in Sources */,
+				21CEE58825E387B400401544 /* InputStreamImplementation.swift in Sources */,
+				21CEE56D25E387B400401544 /* Client.swift in Sources */,
+				21CEE4F825E3875A00401544 /* SWNavigationAction.swift in Sources */,
+				21CEE58C25E387B400401544 /* SQLiteConnection.swift in Sources */,
+				21CEE5AB25E387B500401544 /* EventListenerProtocol.swift in Sources */,
+				21CEE4F225E3875A00401544 /* EventStream.swift in Sources */,
+				21CEE5A125E387B500401544 /* FetchSession.swift in Sources */,
+				21CEE57C25E387B400401544 /* ClientMatchAllOptions.swift in Sources */,
+				21CEE5D425E387E600401544 /* DatabaseType.swift in Sources */,
+				21CEE4F625E3875A00401544 /* MessagePortWrapper.swift in Sources */,
+				21CEE5CE25E387E600401544 /* SQLiteCacheStorage.swift in Sources */,
+				21CEE58625E387B400401544 /* ServiceWorkerDelegate.swift in Sources */,
+				21CEE56A25E387B400401544 /* ErrorMessage.swift in Sources */,
+				21CEE5D525E387E600401544 /* SharedResources.swift in Sources */,
+				21CEE58F25E387B400401544 /* SQLiteResultSet.swift in Sources */,
+				21CEE5A725E387B500401544 /* EventTarget.swift in Sources */,
+				21CEE56C25E387B400401544 /* WindowClient.swift in Sources */,
+				21CEE5D225E387E600401544 /* CoreDatabase.swift in Sources */,
+				21CEE59725E387B400401544 /* ConsoleMirror.swift in Sources */,
+				21CEE5D725E387E600401544 /* WorkerFactory.swift in Sources */,
+				21CEE57125E387B400401544 /* JSURL.swift in Sources */,
+				21CEE59D25E387B500401544 /* FetchResponseProxy.swift in Sources */,
+				21CEE4F425E3875A00401544 /* ServiceWorkerCommands.swift in Sources */,
+				21CEE5A825E387B500401544 /* SwiftEventListener.swift in Sources */,
+				21CEE57225E387B400401544 /* WorkerLocation.swift in Sources */,
+				21CEE5CC25E387E600401544 /* ServiceWorkerRegistrationOptions.swift in Sources */,
+				21CEE58025E387B400401544 /* WindowClientVisibilityState.swift in Sources */,
+				21CEE50225E3875A00401544 /* SWWebViewNavigationDelegate.swift in Sources */,
+				21CEE56F25E387B400401544 /* LocationBase.swift in Sources */,
+				21CEE5CD25E387E600401544 /* RegistrationWorkerSlots.swift in Sources */,
+				21CEE59025E387B400401544 /* SQLiteBlobWriteStream.swift in Sources */,
+				21CEE58925E387B400401544 /* PassthroughStream.swift in Sources */,
+				21CEE4ED25E3875A00401544 /* SWWebViewBridge.swift in Sources */,
+				21CEE58B25E387B400401544 /* Migration.swift in Sources */,
+				21CEE4F925E3875A00401544 /* SWURLSchemeTask.swift in Sources */,
+				21CEE57725E387B400401544 /* JSContextPromise.swift in Sources */,
+				21CEE57425E387B400401544 /* ServiceWorkerGlobalScopeDelegate.swift in Sources */,
+				21CEE5CB25E387E600401544 /* ServiceWorkerRegistration.swift in Sources */,
+				21CEE59825E387B400401544 /* ServiceWorkerExecutionEnvironment.swift in Sources */,
+				21CEE57B25E387B400401544 /* ClientType.swift in Sources */,
+				21CEE5AE25E387B500401544 /* ExtendableMessageEvent.swift in Sources */,
+				21CEE5B125E387B500401544 /* MessageChannel.swift in Sources */,
+				21CEE5D825E387E700401544 /* WorkerInstallationError.swift in Sources */,
+				21CEE5A625E387B500401544 /* ExtendableEvent.swift in Sources */,
+				21CEE58325E387B400401544 /* CacheStorage.swift in Sources */,
+				21CEE56E25E387B400401544 /* Clients.swift in Sources */,
+				21CEE5D325E387E600401544 /* DBConnectionPool.swift in Sources */,
+				21CEE4FE25E3875A00401544 /* ServiceWorkerToJSON.swift in Sources */,
+				21CEE4F025E3875A00401544 /* SWURLSchemeTaskOutputPipe.swift in Sources */,
+				21CEE4FB25E3875A00401544 /* SWWebView.swift in Sources */,
+				21CEE59B25E387B400401544 /* FetchRequest.swift in Sources */,
+				21CEE5AC25E387B500401544 /* FetchEvent.swift in Sources */,
+				21CEE5A425E387B500401544 /* ServiceWorker.swift in Sources */,
+				21CEE5A225E387B500401544 /* FetchHeaders.swift in Sources */,
+				21CEE59225E387B400401544 /* WebSQLResultRows.swift in Sources */,
+				21CEE59325E387B400401544 /* WebSQLDatabase.swift in Sources */,
+				21CEE4FF25E3875A00401544 /* WorkerInstallationErrorToJSON.swift in Sources */,
+				21CEE4FD25E3875A00401544 /* ServiceWorkerContainerToJSON.swift in Sources */,
+				21CEE58425E387B400401544 /* CacheStorageProviderDelegate.swift in Sources */,
+				21CEE59525E387B400401544 /* WebSQLResultSet.swift in Sources */,
+				21CEE4F325E3875A00401544 /* ServiceWorkerContainerCommands.swift in Sources */,
+				21CEE4FA25E3875A00401544 /* SWNavigationResponse.swift in Sources */,
+				215A4BBA25C2BBF000C35AC7 /* ViewController.swift in Sources */,
+				21CEE4F125E3875A00401544 /* MessagePortHandler.swift in Sources */,
+				21CEE59F25E387B500401544 /* HttpStatusCodes.swift in Sources */,
+				21CEE4F725E3875A00401544 /* MessagePortAction.swift in Sources */,
+				21CEE5D025E387E600401544 /* ServiceWorkerStorageProvider.swift in Sources */,
+				21CEE58525E387B400401544 /* Cache.swift in Sources */,
+				215A4BB625C2BBF000C35AC7 /* AppDelegate.swift in Sources */,
+				21CEE59A25E387B400401544 /* FetchCORSRestrictions.swift in Sources */,
+				21CEE57925E387B400401544 /* JSArrayBufferStream.swift in Sources */,
+				21CEE59925E387B400401544 /* EvaluateScriptCall.swift in Sources */,
+				21CEE4EE25E3875A00401544 /* SWWebViewContainerDelegate.swift in Sources */,
+				21CEE4EF25E3875A00401544 /* SWWebViewCoordinator.swift in Sources */,
+				21CEE59625E387B400401544 /* TimeoutManager.swift in Sources */,
+				21CEE5D125E387E600401544 /* ServiceWorkerContainer.swift in Sources */,
+				21CEE59125E387B400401544 /* SQLiteDataType.swift in Sources */,
+				21CEE57025E387B400401544 /* URLSearchParams.swift in Sources */,
+				21CEE5A325E387B500401544 /* FetchTask.swift in Sources */,
+				21CEE5D625E387E600401544 /* WorkerRegistrationFactory.swift in Sources */,
+				21CEE57A25E387B400401544 /* GlobalVariableProvider.swift in Sources */,
+				21CEE5A025E387B500401544 /* FetchResponse.swift in Sources */,
+				21CEE57E25E387B400401544 /* ServiceWorkerClientsDelegate.swift in Sources */,
+				21CEE59C25E387B500401544 /* FetchResponseProtocol.swift in Sources */,
+				21CEE4F525E3875A00401544 /* ServiceWorkerRegistrationCommands.swift in Sources */,
+				21CEE58E25E387B400401544 /* SQLiteBlobReadStream.swift in Sources */,
+				21CEE5AA25E387B500401544 /* JSEventListener.swift in Sources */,
+				21CEE5AD25E387B500401544 /* ConstructableEvent.swift in Sources */,
+				21CEE58125E387B400401544 /* ServiceWorkerRegistrationProtocol.swift in Sources */,
+				21CEE58A25E387B400401544 /* OutputStreamImplementation.swift in Sources */,
+				21CEE5F225E3B85400401544 /* SWWebViewController.swift in Sources */,
+				21CEE59425E387B400401544 /* WebSQLTransaction.swift in Sources */,
+				21F23B0225CCE39B00FE5014 /* WKWebViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		215A4BBB25C2BBF000C35AC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				215A4BBC25C2BBF000C35AC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		215A4BC025C2BBF400C35AC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				215A4BC125C2BBF400C35AC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		215A4BC425C2BBF400C35AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		215A4BC525C2BBF400C35AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		215A4BC725C2BBF400C35AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 626EF0CF6F9D8DB54264475B /* Pods-HQPwaDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAZAU8XQR2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HQPwaDemo",
+				);
+				INFOPLIST_FILE = HQPwaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GCDWebServer\"",
+					"-framework",
+					"\"Gzip\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang.HQPwaDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		215A4BC825C2BBF400C35AC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1C8B0CC7A866466A19F627B /* Pods-HQPwaDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAZAU8XQR2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HQPwaDemo",
+				);
+				INFOPLIST_FILE = HQPwaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GCDWebServer\"",
+					"-framework",
+					"\"Gzip\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"PromiseKit\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang.HQPwaDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		215A4BAD25C2BBF000C35AC7 /* Build configuration list for PBXProject "HQPwaDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215A4BC425C2BBF400C35AC7 /* Debug */,
+				215A4BC525C2BBF400C35AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		215A4BC625C2BBF400C35AC7 /* Build configuration list for PBXNativeTarget "HQPwaDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				215A4BC725C2BBF400C35AC7 /* Debug */,
+				215A4BC825C2BBF400C35AC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 215A4BAA25C2BBF000C35AC7 /* Project object */;
+}
