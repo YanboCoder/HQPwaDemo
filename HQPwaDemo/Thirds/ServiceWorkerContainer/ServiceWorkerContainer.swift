@@ -27,6 +27,7 @@ import PromiseKit
         // there will already be an active worker when the container is created, so we check
         // for that.
         self.readyRegistration = try self.registrationFactory.getReadyRegistration(for: self.url)
+        
         self.controller = self.readyRegistration?.active
     }
 

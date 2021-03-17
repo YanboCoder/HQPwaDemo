@@ -2,6 +2,7 @@ import Foundation
 
 /// The bridge between the service worker and the webviews in the app. Allows a worker to open a window
 /// claim clients, etc. Based on: https://developer.mozilla.org/en-US/docs/Web/API/Clients
+/// service worker 和应用中的 webviews 的桥接文件，允许 service worker 打开 window 来获取 client 等。
 @objc public protocol ServiceWorkerClientsDelegate {
     // These are all optional, but in retrospect, I'm not totally sure why.
 

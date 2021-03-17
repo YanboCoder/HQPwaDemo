@@ -1,6 +1,7 @@
 import Foundation
 import JavaScriptCore
 
+// 遵循 JSExport 协议，提供 ConsoleMirror 方法给 js 调用
 @objc private protocol ConsoleMirrorExports: JSExport {
     func mirror(_ level: String, _ msg: JSValue)
 }
@@ -8,10 +9,14 @@ import JavaScriptCore
 /// JavascriptCore has a fully functional console, just like the browser. But ideally we will also
 /// mirror JSC console statements in our logs, too. There are no console events as such, so we have
 /// to override the functions on the console object itself.
+/// JavascriptCore 有一个功能齐全的控制台，就像浏览器一样。但是我们需要将其输出语句镜像到 OC 的控制台中，所以需要重写其方法来实现此功能
 @objc class ConsoleMirror: NSObject, ConsoleMirrorExports {
+    // 声明 originalConsole 对象
     var originalConsole: JSValue?
 
+    // 初始化方法
     init(in context: JSContext) throws {
+        // 获取控制台输出内容
         self.originalConsole = context.globalObject.objectForKeyedSubscript("console")
         super.init()
 
@@ -68,6 +73,7 @@ import JavaScriptCore
     /// Not entirely sure if this is necessary, but we remove this object and return the
     /// original console when the worker closes. Hopefully to ensure garbage collection
     /// runs correctly.
+    /// 清除对 console 对象的引用，交还给 JS console
     func cleanup() {
         guard let console = self.originalConsole else {
             Log.error?("Cleanup with no original console. This should not happen.")
@@ -79,6 +85,7 @@ import JavaScriptCore
     }
 
     /// The actual function that performs the logging
+    /// 实现相关 log 输出的映射
     fileprivate func mirror(_ level: String, _ msg: JSValue) {
         let values = msg.toArray()
             .map { val in

@@ -2,6 +2,7 @@ import Foundation
 import JavaScriptCore
 import PromiseKit
 
+/// 遵循 JSExport 协议，提供 FetchEvent 方法给 js 调用
 @objc protocol FetchEventExports: Event, JSExport {
     func respondWith(_: JSValue)
     var request: FetchRequest { get }
@@ -10,13 +11,19 @@ import PromiseKit
 /// Similar to an ExtendableEvent, but a FetchEvent (https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 /// exposes respondWith() instead of waitUntil(), because we want to be able to return a FetchResponse after
 /// resolving promises.
+/// FetchEvent 类定义了 fetch 事件的事件类型
 @objc public class FetchEvent: NSObject, FetchEventExports {
     /// All FetchEvents must have a FetchRequest attached for the worker to respond to.
+    /// 用来标记触发 worker 响应的请求
     let request: FetchRequest
 
+    // 声明 respondValue
     fileprivate var respondValue: JSValue?
+    
+    // 标记事件类型，固定为 fetch
     public let type = "fetch"
 
+    // 用来阻止浏览器的默认 fetch 行为，允许自己构建 response
     func respondWith(_ val: JSValue) {
         if self.respondValue != nil {
             // Unlike waitUntil(), you can only call respondWith() once. So we throw an error if the client
@@ -42,11 +49,13 @@ import PromiseKit
         self.respondValue = resolved
     }
 
+    // 初始化方法， request 赋值
     public init(request: FetchRequest) {
         self.request = request
         super.init()
     }
 
+    // 执行 resolve 方法
     public func resolve(in _: ServiceWorker) throws -> Promise<FetchResponseProtocol?> {
         guard let promise = self.respondValue else {
             // if e.respondWith() was never called that's perfectly valid - we resolve the

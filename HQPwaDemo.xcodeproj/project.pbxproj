@@ -12,6 +12,9 @@
 		215A4BBD25C2BBF000C35AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BBB25C2BBF000C35AC7 /* Main.storyboard */; };
 		215A4BBF25C2BBF400C35AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BBE25C2BBF400C35AC7 /* Assets.xcassets */; };
 		215A4BC225C2BBF400C35AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215A4BC025C2BBF400C35AC7 /* LaunchScreen.storyboard */; };
+		2186396A25F89679008AD5DB /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2186396825F89679008AD5DB /* index.html */; };
+		2186396B25F89679008AD5DB /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 2186396925F89679008AD5DB /* style.css */; };
+		21A341E42600A7C600D6CA6A /* YBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A341E32600A7C600D6CA6A /* YBWebViewController.swift */; };
 		21CEE4ED25E3875A00401544 /* SWWebViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D025E3875A00401544 /* SWWebViewBridge.swift */; };
 		21CEE4EE25E3875A00401544 /* SWWebViewContainerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D225E3875A00401544 /* SWWebViewContainerDelegate.swift */; };
 		21CEE4EF25E3875A00401544 /* SWWebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CEE4D325E3875A00401544 /* SWWebViewCoordinator.swift */; };
@@ -150,6 +153,9 @@
 		215A4BBE25C2BBF400C35AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		215A4BC125C2BBF400C35AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		215A4BC325C2BBF400C35AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2186396825F89679008AD5DB /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		2186396925F89679008AD5DB /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		21A341E32600A7C600D6CA6A /* YBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBWebViewController.swift; sourceTree = "<group>"; };
 		21CEE4CE25E3875A00401544 /* SWWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWWebView.h; sourceTree = "<group>"; };
 		21CEE4D025E3875A00401544 /* SWWebViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewBridge.swift; sourceTree = "<group>"; };
 		21CEE4D225E3875A00401544 /* SWWebViewContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebViewContainerDelegate.swift; sourceTree = "<group>"; };
@@ -313,14 +319,33 @@
 				215A4BC325C2BBF400C35AC7 /* Info.plist */,
 				21F23B0125CCE39B00FE5014 /* WKWebViewController.swift */,
 				21CEE5F125E3B85400401544 /* SWWebViewController.swift */,
+				2186396725F89679008AD5DB /* Home */,
 				21CEE4CC25E3874000401544 /* Thirds */,
 			);
 			path = HQPwaDemo;
 			sourceTree = "<group>";
 		};
+		2186396725F89679008AD5DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2186396825F89679008AD5DB /* index.html */,
+				2186396925F89679008AD5DB /* style.css */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		21A341E22600A1CF00D6CA6A /* YBWebView */ = {
+			isa = PBXGroup;
+			children = (
+				21A341E32600A7C600D6CA6A /* YBWebViewController.swift */,
+			);
+			path = YBWebView;
+			sourceTree = "<group>";
+		};
 		21CEE4CC25E3874000401544 /* Thirds */ = {
 			isa = PBXGroup;
 			children = (
+				21A341E22600A1CF00D6CA6A /* YBWebView */,
 				21CEE5B525E387E600401544 /* ServiceWorkerContainer */,
 				21CEE50525E387B400401544 /* ServiceWorker */,
 				21CEE4CD25E3875A00401544 /* SWWebView */,
@@ -584,9 +609,9 @@
 		21CEE54925E387B400401544 /* Fetch */ = {
 			isa = PBXGroup;
 			children = (
+				21CEE54C25E387B400401544 /* Response */,
 				21CEE54A25E387B400401544 /* FetchCORSRestrictions.swift */,
 				21CEE54B25E387B400401544 /* FetchRequest.swift */,
-				21CEE54C25E387B400401544 /* Response */,
 				21CEE55025E387B400401544 /* HttpStatusCodes.swift */,
 				21CEE55125E387B400401544 /* FetchResponse.swift */,
 				21CEE55225E387B400401544 /* FetchSession.swift */,
@@ -758,6 +783,7 @@
 		215A4BAA25C2BBF000C35AC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YB;
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
@@ -789,6 +815,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2186396A25F89679008AD5DB /* index.html in Resources */,
+				2186396B25F89679008AD5DB /* style.css in Resources */,
 				21CEE5B425E387C700401544 /* js-dist-sw in Resources */,
 				215A4BC225C2BBF400C35AC7 /* LaunchScreen.storyboard in Resources */,
 				21CEE50425E3878C00401544 /* js-dist in Resources */,
@@ -919,6 +947,7 @@
 				21CEE4FB25E3875A00401544 /* SWWebView.swift in Sources */,
 				21CEE59B25E387B400401544 /* FetchRequest.swift in Sources */,
 				21CEE5AC25E387B500401544 /* FetchEvent.swift in Sources */,
+				21A341E42600A7C600D6CA6A /* YBWebViewController.swift in Sources */,
 				21CEE5A425E387B500401544 /* ServiceWorker.swift in Sources */,
 				21CEE5A225E387B500401544 /* FetchHeaders.swift in Sources */,
 				21CEE59225E387B400401544 /* WebSQLResultRows.swift in Sources */,
@@ -1108,7 +1137,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KAZAU8XQR2;
+				DEVELOPMENT_TEAM = 7EARH3U976;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HQPwaDemo",
@@ -1153,7 +1182,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KAZAU8XQR2;
+				DEVELOPMENT_TEAM = 7EARH3U976;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HQPwaDemo",

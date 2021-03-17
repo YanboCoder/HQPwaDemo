@@ -1,8 +1,8 @@
 //
-//  WKWebViewController.swift
+//  YBRootViewController.swift
 //  HQPwaDemo
 //
-//  Created by wang on 2021/2/5.
+//  Created by wang on 2021/3/12.
 //
 
 import UIKit
@@ -10,42 +10,55 @@ import WebKit
 import PromiseKit
 import JavaScriptCore
 
-class WKWebViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler, WKURLSchemeHandler {
+@objc protocol YBWebViewProtocol: JSExport {
+    func fullName()
+}
+
+@objc class YBWebViewController: UIViewController, UITextFieldDelegate, WKNavigationDelegate, WKScriptMessageHandler, YBWebViewProtocol {
+    var addressBar: UITextField?
     var wkWebView: WKWebView = WKWebView()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "WKWebView"
+        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .lightGray
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refresh))
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action: #selector(back))
-
-        // Do any additional setup after loading the view.
-//        let pathToJS = Bundle(for: SWWebView.self).bundleURL
-//            .appendingPathComponent("js-dist", isDirectory: true)
-//            .appendingPathComponent("CustomRuntime.js")
-//        let jsRuntimeSource: String
-//        do {
-//            jsRuntimeSource = try String(contentsOf: pathToJS)
-//        } catch {
-//            Log.error?("Could not load SWWebKit runtime JS. Quitting.")
-//            fatalError()
-//        }
-//        let userScript = WKUserScript(source: jsRuntimeSource, injectionTime: .atDocumentStart, forMainFrameOnly: false)
         
-        let webView: WKWebView = WKWebView.init(frame: self.view.frame)
+        self.setupTextField()
+        self.setupWebView()
+    }
+    
+    func setupTextField() {
+        let addressBar = UITextField(frame: CGRect(x: 0, y: 84, width: self.view.bounds.width, height: 60))
+        addressBar.text = "https://yanboCoder.github.io/pwa-demos/simplepwa/"
+        addressBar.borderStyle = .roundedRect
+        addressBar.placeholder = "请输入资源地址"
+        addressBar.delegate = self
+        addressBar.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 60))
+        addressBar.leftViewMode = .always
+        
+        self.view.addSubview(addressBar)
+        self.addressBar = addressBar
+    }
+    
+    func setupWebView() {
+        let pathToJS = Bundle(for: SWWebView.self).bundleURL
+            .appendingPathComponent("js-dist", isDirectory: true)
+            .appendingPathComponent("CustomRuntime.js")
+        let jsRuntimeSource: String
+        do {
+            jsRuntimeSource = try String(contentsOf: pathToJS)
+        } catch {
+            Log.error?("Could not load SWWebKit runtime JS. Quitting.")
+            fatalError()
+        }
+        let userScript = WKUserScript(source: jsRuntimeSource, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+        
+        let webView: WKWebView = WKWebView.init(frame: CGRect(x: 0, y: 144, width: self.view.bounds.width, height: self.view.bounds.height-144))
         webView.navigationDelegate = self
-//        webView.configuration.userContentController.addUserScript(userScript)
-//        webView.configuration.userContentController.add(self, name: "serviceWorker")
+        webView.configuration.userContentController.addUserScript(userScript)
+        webView.configuration.userContentController.add(self, name: "foo")
         let  url = NSURL(string: "https://yanboCoder.github.io/pwa-demos/simplepwa/")
         let request = URLRequest(url: url! as URL)
         webView .load(request)
@@ -54,24 +67,31 @@ class WKWebViewController: UIViewController, WKNavigationDelegate, WKScriptMessa
     }
     
     @objc private func refresh() {
-        wkWebView.reload()
+        let context = JSContext()
+        let webVC = YBWebViewController()
+        context?.setObject(webVC, forKeyedSubscript: NSString(string:"webVC"))
+        context?.evaluateScript("webVC.fullName()")
     }
     
-    @objc private func back() {
-        if wkWebView.canGoBack {
-            wkWebView.goBack()
-        } else {
-            self.navigationController?.popViewController(animated: true)
+    func fullName() {
+        print("===== fullName =====")
+    }
+    
+    // MARK: - UITextFieldDelegate -
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        let urlString = textField.text! as String
+        
+        guard let urlComps = URLComponents(string: urlString) else {
+            fatalError("must provide a valid url")
         }
-    }
-    
-    // MARK: - WKURLSchemeHandler -
-    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
+
+        URLCache.shared.removeAllCachedResponses()
+        print("Loading \(urlComps.url!.absoluteString)")
+        _ = self.wkWebView.load(URLRequest(url: urlComps.url!))
         
-    }
-    
-    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
-        
+        return true
     }
     
     // MARK: - WKScriptMessageHandler -
@@ -87,7 +107,7 @@ class WKWebViewController: UIViewController, WKNavigationDelegate, WKScriptMessa
         }
     }
     
-    // MARK: - WKNavigationDelegate -    
+    // MARK: - WKNavigationDelegate -
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 //        print("=== decidePolicyFor navigationAction ===\n \(navigationAction.request)")
         return decisionHandler(.allow)

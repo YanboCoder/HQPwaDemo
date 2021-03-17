@@ -46,7 +46,7 @@ public class SWWebViewCoordinator: SWWebViewContainerDelegate, ServiceWorkerClie
         })?.container
 
         if container == nil {
-            Log.debug?("No container for: \(url)")
+//            Log.debug?("No container for: \(url)")
         } else {
             Log.debug?("Container: \(url)")
         }

@@ -2,6 +2,7 @@ import Foundation
 import JavaScriptCore
 import PromiseKit
 
+/// 遵循 JSExport 协议，提供 ExtendableEvent 方法给 js 调用
 @objc protocol ExtendableEventExports: Event, JSExport {
     func waitUntil(_: JSValue)
 }
@@ -9,13 +10,17 @@ import PromiseKit
 /// A version of the ExtendableEvent interface service workers use: https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent
 /// it lets us prolong the life of an event by sending a promise to waitUntil(). It's useful in the install and active events
 /// to not update the state of a worker until you've cached URLs, set up a database, etc.
+/// ExtendableEvent 类定义，继承自 Event，用来延长事件的生命周期，通过返回 Promise 给 waitUntil()
 @objc public class ExtendableEvent: NSObject, ExtendableEventExports {
+    // 用来区分扩展事件的类型，例如：install、activate
     public let type: String
 
+    // 初始化 ExtendableEvent，type 赋值
     public init(type: String) {
         self.type = type
     }
 
+    // ExtendableEventState 枚举定义
     fileprivate enum ExtendableEventState {
         case valid
         case resolved
@@ -23,12 +28,15 @@ import PromiseKit
 
     /// You can only call waitUntil() when the event is initally dispatched - after that point resolve() has
     /// been called and the promise can't be added to the chain.
+    /// 初始化 state 为 valid
     fileprivate var state: ExtendableEventState = .valid
 
     /// You can call waitUntil() multiple times, chaining multiple promises one after the other. This array
     /// keeps track of those promises.
+    /// 初始化数组 pendingPromises，用来实现 waitUntil() 的多次调用
     fileprivate var pendingPromises: [JSValue] = []
 
+    // 此方法的作用在于：告诉事件分发者此事件正在执行；还可以用来判断事件是否完成。
     func waitUntil(_ val: JSValue) {
         if self.state == .resolved {
             val.context.exception = JSValue(newErrorFromMessage: "You used waitUntil() too late - the event has already been resolved", in: val.context)
@@ -38,14 +46,17 @@ import PromiseKit
         self.pendingPromises.append(val)
     }
 
+    // 清除管理的引用对象
     fileprivate func clearManagedReferences() {
         self.pendingPromises.removeAll()
     }
 
+    // 注销
     deinit {
         self.clearManagedReferences()
     }
 
+    // 执行 resolve 方法
     public func resolve(in worker: ServiceWorker) -> Promise<Void> {
         self.state = .resolved
 

@@ -95,15 +95,16 @@ class SWWebViewNavigationDelegate: NSObject, WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
         guard let swWebView = webView as? SWWebView else {
             Log.error?("Trying to use SWNavigationDelegate on a non-SWWebView class")
             return decisionHandler(.allow)
         }
-
+        
         guard let url = navigationAction.request.url else {
             return decisionHandler(.allow)
         }
-
+        
         if url.scheme == SWWebView.ServiceWorkerScheme {
             // If we're already using the service worker scheme, we need to double check that
             // we're using a domain allowed by our configuration.
@@ -144,6 +145,7 @@ class SWWebViewNavigationDelegate: NSObject, WKNavigationDelegate {
                     return decisionHandler(.allow)
                 }
             } else {
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newSWWebView"), object: nil, userInfo: ["urlString": url.absoluteString])
                 return decisionHandler(.allow)
             }
         }

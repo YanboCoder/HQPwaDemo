@@ -1,5 +1,6 @@
 import Foundation
 
+// CacheStorageProviderDelegate 协议声明
 @objc public protocol CacheStorageProviderDelegate {
     /// CacheStorage instances are specific to origin, but we send in the worker
     /// in case a custom implementation wants to do more.

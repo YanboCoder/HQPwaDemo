@@ -13,12 +13,17 @@ import WebKit
 class SWWebViewController: UIViewController {
 
     var coordinator: SWWebViewCoordinator?
-
+    
+    var urlString: String = ""
+        
     private var swView: SWWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(navToNewController), name: NSNotification.Name(rawValue: "newSWWebView"), object: nil)
+        
         self.addStubs()
         let config = WKWebViewConfiguration()
 
@@ -31,11 +36,10 @@ class SWWebViewController: UIViewController {
             .appendingPathComponent("testapp-db", isDirectory: true)
 
         do {
-            if FileManager.default.fileExists(atPath: storageURL.path) == false {
+            if !FileManager.default.fileExists(atPath: storageURL.path) {
 //                try FileManager.default.removeItem(at: storageURL)
                 try FileManager.default.createDirectory(at: storageURL, withIntermediateDirectories: true, attributes: nil)
             }
-            
         } catch {
             fatalError()
         }
@@ -50,10 +54,11 @@ class SWWebViewController: UIViewController {
         title = "SWWebView"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refresh))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action: #selector(back))
 
-        // MARK: - Home URL
-        let urlString = "https://mdn.github.io/pwa-examples/js13kpwa/"
-
+        // MARK: - Home URL - web
+//        let urlString = "https://yanboCoder.github.io/pwa-demos/minipwa/public/"
+        
         guard let urlComps = URLComponents(string: urlString), let host = urlComps.host else {
             fatalError("must provide a valid url")
         }
@@ -71,8 +76,23 @@ class SWWebViewController: UIViewController {
         _ = self.swView.load(URLRequest(url: urlComps.url!))
     }
     
+    @objc private func navToNewController(notify: Notification) {
+        let wkVC = SWWebViewController()
+        let userInfo = notify.userInfo as! [String: AnyObject]
+        wkVC.urlString = userInfo["urlString"] as! String
+        self.navigationController?.pushViewController(wkVC, animated: true)
+    }
+    
     @objc private func refresh() {
         swView.reload()
+    }
+    
+    @objc private func back() {
+        if swView.canGoBack {
+            swView.goBack()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
     func addStubs() {

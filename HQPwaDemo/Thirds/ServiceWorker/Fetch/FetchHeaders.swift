@@ -2,6 +2,7 @@ import Foundation
 import JavaScriptCore
 
 /// The part of our FetchHeaders object that will be available inside a JSContext
+/// 遵循 JSExport 协议，提供 FetchHeaders 方法及属性给 js 调用
 @objc protocol FetchHeadersExports: JSExport {
     func set(_ name: String, _ value: String)
     func get(_ name: String) -> String?
@@ -74,6 +75,7 @@ import JavaScriptCore
     /// - Parameter json: The JSON string to parse
     /// - Returns: A complete FetchHeaders object with the headers provided in the JSON
     /// - Throws: If the JSON cannot be parsed successfully.
+    /// 将 JSON 字符串转换为 FetchHeaders 对象
     public static func fromJSON(_ json: String) throws -> FetchHeaders {
         guard let jsonAsData = json.data(using: String.Encoding.utf8) else {
             throw ErrorMessage("Could not parse JSON string")
@@ -102,6 +104,7 @@ import JavaScriptCore
     ///
     /// - Returns: A JSON string
     /// - Throws: if the JSON can't be encoded. Not sure what would ever cause this to happen.
+    /// FetchHeaders 对象转换为 JSON 字符串
     public func toJSON() throws -> String {
         var dictionaryArray: [[String: String]] = []
         keys().forEach { key in
@@ -121,6 +124,7 @@ import JavaScriptCore
         return string
     }
 
+    // 设置允许的请求头信息
     public func filteredBy(allowedKeys: [String]) -> FetchHeaders {
         let lowercaseAllowed = allowedKeys.map { $0.lowercased() }
 
@@ -138,6 +142,7 @@ import JavaScriptCore
         return filteredHeaders
     }
 
+    // 删除不允许的请求头信息
     public func filteredBy(disallowedKeys: [String]) -> FetchHeaders {
         let lowercaseDisallowed = disallowedKeys.map { $0.lowercased() }
 

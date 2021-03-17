@@ -4,6 +4,7 @@ import JavaScriptCore
 /// ServiceWorkerGlobalScope sits inside a ServiceWorkerExecutionEnvironment, and defines what functions and
 /// variables will be both globally accessible, and available on the "self" variable. (e.g.
 /// self.addEventListener() and addEventListener() both work).
+/// ServiceWorkerGlobalScope 作用于 ServiceWorkerExecutionEnvironment 线程中，定义了可以全局访问的函数和变量，以及 self 的使用
 @objc class ServiceWorkerGlobalScope: EventTarget {
     let console: ConsoleMirror
     unowned let worker: ServiceWorker
@@ -16,6 +17,7 @@ import JavaScriptCore
     /// The ServiceWorker project doesn't define a ServiceWorkerRegistration object, it just defines
     /// a protocol for another project to implement. If one isn't defined and the client code tries
     /// to access it, we throw an error.
+    /// 声明一个遵守 ServiceWorkerRegistrationProtocol 协议的 registration
     var registration: ServiceWorkerRegistrationProtocol? {
         if self.worker.registration == nil {
             if let context = JSContext.current() {
@@ -27,6 +29,7 @@ import JavaScriptCore
         return self.worker.registration
     }
 
+    // 初始化方法
     init(context: JSContext, _ worker: ServiceWorker) throws {
         self.console = try ConsoleMirror(in: context)
         self.worker = worker
@@ -48,10 +51,12 @@ import JavaScriptCore
         try self.loadIndexedDBShim()
     }
 
+    // 注销，清除对 console 的引用
     deinit {
         self.console.cleanup()
     }
 
+    // 添加变量到上下文中
     fileprivate func attachVariablesToContext() throws {
         // Annoyingly, we can't change the globalObject to be a reference to this. Instead, we have to take
         // all the attributes from the global scope and manually apply them to the existing global object.
@@ -121,6 +126,7 @@ import JavaScriptCore
     /// API (which is simple enough for me to understand) then provided IndexedDB through a shim library:
     /// https://github.com/axemclion/IndexedDBShim
     /// It's over 100KB, even minified, so it would be great to get rid of it some day.
+    /// 引入第三方 IndexedDBShim 库，提供 IndexedDB 功能
     fileprivate func loadIndexedDBShim() throws {
         let file = Bundle(for: ServiceWorkerGlobalScope.self).bundleURL
             .appendingPathComponent("js-dist-sw", isDirectory: true)
@@ -214,6 +220,7 @@ import JavaScriptCore
 
     /// Imports other scripts into the global scope of the worker. This part just parses
     /// the strings into URLs, then passes to the delegate (almost always ServiceWorkerExecutionEnvironment)
+    /// 导入 js 脚本到 worker 中
     internal func importScripts() {
         do {
             guard let delegate = self.delegate else {

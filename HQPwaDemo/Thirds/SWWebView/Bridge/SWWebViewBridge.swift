@@ -27,6 +27,8 @@ public class SWWebViewBridge: NSObject, WKURLSchemeHandler, WKScriptMessageHandl
             guard let body = message.body as? [String: Any] else {
                 throw ErrorMessage("Could not parse body")
             }
+            
+            print("===================\n message.name: \(message.name),\n message.body: \(body)\n")
 
             guard let eventStreamID = body["streamID"] as? String, let promiseIndex = body["promiseIndex"] as? Int,
                 let path = body["path"] as? String, let requestBody = body["body"] as AnyObject? else {
@@ -71,6 +73,8 @@ public class SWWebViewBridge: NSObject, WKURLSchemeHandler, WKScriptMessageHandl
             urlSchemeTask.didFailWithError(error)
             return
         }
+        
+        print("===== start urlSchemeTask =====\n \(String(describing: urlSchemeTask.request.url))")
 
         // And now that we've got the task set up, we can run async promises without
         // worrying about if the task will fail.
@@ -93,9 +97,9 @@ public class SWWebViewBridge: NSObject, WKURLSchemeHandler, WKScriptMessageHandl
                 return Promise.value(())
             }
 
-            //            if modifiedTask.request.httpMethod == SWWebViewBridge.serviceWorkerRequestMethod {
-            //                return try self.startServiceWorkerTask(modifiedTask, webview: swWebView)
-            //            }
+//            if modifiedTask.request.httpMethod == SWWebViewBridge.serviceWorkerRequestMethod {
+//                return try self.startServiceWorkerTask(modifiedTask, webview: swWebView)
+//            }
 
             let request = FetchRequest(url: requestURL)
 
@@ -155,61 +159,61 @@ public class SWWebViewBridge: NSObject, WKURLSchemeHandler, WKScriptMessageHandl
         }
     }
 
-    //    func startServiceWorkerTask(_ task: SWURLSchemeTask, webview: SWWebView) throws -> Promise<Void> {
-    //
-    //        guard let requestURL = task.request.url else {
-    //            throw ErrorMessage("Cannot start a task with no URL")
-    //        }
-    //
-    //        guard let referrer = task.referrer else {
-    //            throw ErrorMessage("All non-event stream SW API tasks must send a referer header")
-    //        }
-    //
-    //        guard let container = webview.containerDelegate?.container(webview, getContainerFor: referrer) else {
-    //            throw ErrorMessage("ServiceWorkerContainer should already exist before any tasks are run")
-    //        }
-    //
-    //        guard let eventStream = self.eventStreams.first(where: { $0.container == container }) else {
-    //            throw ErrorMessage("Commands must have an event stream attached")
-    //        }
-    //
-    //        guard let matchingRoute = SWWebViewBridge.routes.first(where: { $0.key == requestURL.path })?.value else {
-    //            // We don't recognise this URL, so we just return a 404.
-    //            try task.didReceiveHeaders(statusCode: 404)
-    //            try task.didFinish()
-    //            return Promise(value: ())
-    //        }
-    //
-    //        var jsonBody: AnyObject?
-    //        if let body = task.request.httpBody {
-    //            jsonBody = try JSONSerialization.jsonObject(with: body, options: []) as AnyObject
-    //        }
-    //
-    //        return firstly { () -> Promise<Any?> in
-    //            guard let promise = try matchingRoute(eventStream, jsonBody) else {
-    //                // The task didn't return an async promise, so we can just
-    //                // return immediately
-    //                return Promise(value: nil)
-    //            }
-    //            // Otherwise, wait for the return
-    //            return promise
-    //        }
-    //
-    //        .then { response in
-    //            guard var encodedResponse = "null".data(using: .utf8) else {
-    //                throw ErrorMessage("Could not create default null response")
-    //            }
-    //            if let responseExists = response {
-    //                encodedResponse = try JSONSerialization.data(withJSONObject: responseExists, options: [])
-    //            }
-    //            try task.didReceiveHeaders(statusCode: 200, headers: [
-    //                "Content-Type": "application/json"
-    //            ])
-    //            try task.didReceive(encodedResponse)
-    //            try task.didFinish()
-    //            return Promise(value: ())
-    //        }
-    //    }
+//    func startServiceWorkerTask(_ task: SWURLSchemeTask, webview: SWWebView) throws -> Promise<Void> {
+//
+//        guard let requestURL = task.request.url else {
+//            throw ErrorMessage("Cannot start a task with no URL")
+//        }
+//
+//        guard let referrer = task.referrer else {
+//            throw ErrorMessage("All non-event stream SW API tasks must send a referer header")
+//        }
+//
+//        guard let container = webview.containerDelegate?.container(webview, getContainerFor: referrer) else {
+//            throw ErrorMessage("ServiceWorkerContainer should already exist before any tasks are run")
+//        }
+//
+//        guard let eventStream = self.eventStreams.first(where: { $0.container == container }) else {
+//            throw ErrorMessage("Commands must have an event stream attached")
+//        }
+//
+//        guard let matchingRoute = SWWebViewBridge.routes.first(where: { $0.key == requestURL.path })?.value else {
+//            // We don't recognise this URL, so we just return a 404.
+//            try task.didReceiveHeaders(statusCode: 404)
+//            try task.didFinish()
+//            return Promise(value: ())
+//        }
+//
+//        var jsonBody: AnyObject?
+//        if let body = task.request.httpBody {
+//            jsonBody = try JSONSerialization.jsonObject(with: body, options: []) as AnyObject
+//        }
+//
+//        return firstly { () -> Promise<Any?> in
+//            guard let promise = try matchingRoute(eventStream, jsonBody) else {
+//                // The task didn't return an async promise, so we can just
+//                // return immediately
+//                return Promise(value: nil)
+//            }
+//            // Otherwise, wait for the return
+//            return promise
+//        }
+//
+//        .then { response in
+//            guard var encodedResponse = "null".data(using: .utf8) else {
+//                throw ErrorMessage("Could not create default null response")
+//            }
+//            if let responseExists = response {
+//                encodedResponse = try JSONSerialization.data(withJSONObject: responseExists, options: [])
+//            }
+//            try task.didReceiveHeaders(statusCode: 200, headers: [
+//                "Content-Type": "application/json"
+//            ])
+//            try task.didReceive(encodedResponse)
+//            try task.didFinish()
+//            return Promise(value: ())
+//        }
+//    }
 
     func startEventStreamTask(_ task: SWURLSchemeTask, webview: SWWebView) throws {
         guard let containerDelegate = webview.containerDelegate else {
