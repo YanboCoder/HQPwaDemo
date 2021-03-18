@@ -61,7 +61,6 @@ class ViewController: UIViewController {
 //                try FileManager.default.removeItem(at: storageURL)
                 try FileManager.default.createDirectory(at: storageURL, withIntermediateDirectories: true, attributes: nil)
             }
-            
         } catch {
             fatalError()
         }

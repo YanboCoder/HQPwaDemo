@@ -4,12 +4,22 @@ import JavaScriptCore
 /// JSContext has no built-in support for setTimeout, setInterval, etc. So we need to manually
 /// add that support into the context. All public methods are exactly as you'd expect. As documented:
 /// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+/// TimeoutManager 类定义，用来执行延时的方法或代码片段
 class TimeoutManager: NSObject {
     @objc fileprivate class TimeoutArguments: NSObject {
+        // 等待时长，单位为毫秒
         let delay: Double
+        
+        // 延期执行的方法
         let funcToRun: JSValue
+        
+        // 传递给 funcToRun 的附加参数
         let args: [Any]
+        
+        // 
         let timeoutIndex: Int64
+        
+        // 是否重复调用
         let isInterval: Bool
 
         init(delay: Double, funcToRun: JSValue, args: [Any], timeoutIndex: Int64, isInterval: Bool) {
@@ -107,6 +117,7 @@ class TimeoutManager: NSObject {
     /// setTimeout() and setInteral() have a dynamic argument length - after
     /// the function and delay, the rest are arguments to be sent to the function
     /// when it runs. So we need to run a specific handler for this.
+    /// 
     fileprivate func getArgumentsForSetCall(isInterval: Bool) -> TimeoutArguments? {
         ServiceWorkerExecutionEnvironment.ensureContextIsOnCorrectThread()
 
